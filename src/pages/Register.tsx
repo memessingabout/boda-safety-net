@@ -26,8 +26,8 @@ const formSchema = z.object({
   county: z.string().min(1, "Please select a county"),
   subCounty: z.string().min(1, "Sub county is required"),
   ward: z.string().min(1, "Ward is required"),
-  termsAccepted: z.literal(true, {
-    errorMap: () => ({ message: "You must accept the terms and conditions" }),
+  termsAccepted: z.boolean().refine(val => val === true, {
+    message: "You must accept the terms and conditions"
   }),
 });
 
