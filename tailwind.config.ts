@@ -26,13 +26,13 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#228B22', // forest green
+					DEFAULT: '#006400', // dark green (matches site)
 					foreground: '#FFFFFF',
 					light: '#4CAF50',
-					dark: '#1B5E20'
+					dark: '#004D00'
 				},
 				secondary: {
-					DEFAULT: '#BC3F31', // deep red
+					DEFAULT: '#BC3F31', // red color from the site
 					foreground: '#FFFFFF',
 					light: '#D84A38',
 					dark: '#9E2A1F'

@@ -1,15 +1,20 @@
 
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Menu, X, ChevronDown } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
+import { Menu, X, ChevronDown, Phone, Mail } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
+  };
+
+  const isActive = (path: string) => {
+    return location.pathname === path;
   };
 
   const menuItems = [
@@ -22,13 +27,33 @@ const Header = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-white shadow-md">
-      <div className="container mx-auto px-4 py-2">
+    <header className="w-full bg-white shadow-md">
+      {/* Top contact bar */}
+      <div className="bg-primary text-white py-2 px-4 hidden md:block">
+        <div className="container mx-auto flex justify-between items-center">
+          <div className="flex items-center space-x-4">
+            <div className="flex items-center">
+              <Phone className="h-4 w-4 mr-2" />
+              <span className="text-sm">+254 702 423004</span>
+            </div>
+            <div className="flex items-center">
+              <Mail className="h-4 w-4 mr-2" />
+              <span className="text-sm">info@digitalboda.co.ke</span>
+            </div>
+          </div>
+          <div className="flex space-x-4">
+            <a href="#" className="text-sm hover:text-gray-200">Get in touch</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Main navigation */}
+      <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <h1 className="text-xl font-bold text-primary md:text-2xl">
-              <span className="text-secondary">Digital</span> Boda
+            <h1 className="text-xl font-bold md:text-2xl">
+              <span className="text-secondary">Digital</span> <span className="text-primary">Boda</span>
             </h1>
           </Link>
 
@@ -38,7 +63,10 @@ const Header = () => {
               <Link
                 key={index}
                 to={item.path}
-                className="px-3 py-2 text-dark hover:text-primary transition-colors duration-300"
+                className={cn(
+                  "px-3 py-2 text-dark hover:text-primary transition-colors duration-300",
+                  isActive(item.path) && "text-primary font-medium"
+                )}
               >
                 {item.label}
               </Link>
@@ -48,12 +76,12 @@ const Header = () => {
           {/* Authentication Buttons - Desktop */}
           <div className="hidden lg:flex items-center space-x-2">
             <Link to="/login">
-              <Button variant="outline" className="border-primary text-primary hover:bg-primary-light hover:text-white">
+              <Button variant="outline" className="border-primary text-primary hover:bg-primary hover:text-white">
                 Login
               </Button>
             </Link>
             <Link to="/register">
-              <Button className="bg-primary text-white hover:bg-primary-dark">
+              <Button className="bg-secondary text-white hover:bg-secondary-dark">
                 Register
               </Button>
             </Link>
@@ -79,11 +107,19 @@ const Header = () => {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "fixed inset-0 bg-white z-40 transform transition-transform duration-300 lg:hidden",
+          "fixed inset-0 bg-white z-50 transform transition-transform duration-300 lg:hidden overflow-y-auto",
           isMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
       >
-        <div className="flex flex-col h-full pt-16 px-4">
+        <div className="flex flex-col h-full px-4 pt-20 pb-6">
+          <button
+            onClick={toggleMenu}
+            className="absolute top-4 right-4 p-2"
+            aria-label="Close Menu"
+          >
+            <X className="h-6 w-6 text-dark" />
+          </button>
+
           <div className="flex flex-col space-y-4">
             {menuItems.map((item, index) => (
               <Link
@@ -103,7 +139,7 @@ const Header = () => {
                 </Button>
               </Link>
               <Link to="/register" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full bg-primary text-white">
+                <Button className="w-full bg-secondary text-white">
                   Register
                 </Button>
               </Link>
