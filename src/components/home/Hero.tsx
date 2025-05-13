@@ -21,7 +21,7 @@ const Hero = () => {
               </Button>
             </Link>
             <Link to="/register">
-              <Button size="lg" className="bg-secondary text-white hover:bg-secondary-dark flex items-center">
+              <Button size="lg" className="bg-secondary text-secondary-foreground hover:bg-secondary-dark flex items-center">
                 Join Us <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>

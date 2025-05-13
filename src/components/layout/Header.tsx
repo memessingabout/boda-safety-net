@@ -42,7 +42,7 @@ const Header = () => {
             </div>
           </div>
           <div className="flex space-x-4">
-            <a href="#" className="text-sm hover:text-gray-200">Get in touch</a>
+            <Link to="/contact" className="text-sm hover:text-gray-200">Get in touch</Link>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ const Header = () => {
               </Button>
             </Link>
             <Link to="/register">
-              <Button className="bg-secondary text-white hover:bg-secondary-dark">
+              <Button className="bg-secondary text-secondary-foreground hover:bg-secondary-dark">
                 Register
               </Button>
             </Link>
@@ -139,7 +139,7 @@ const Header = () => {
                 </Button>
               </Link>
               <Link to="/register" onClick={() => setIsMenuOpen(false)}>
-                <Button className="w-full bg-secondary text-white">
+                <Button className="w-full bg-secondary text-secondary-foreground">
                   Register
                 </Button>
               </Link>

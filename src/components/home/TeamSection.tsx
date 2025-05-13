@@ -23,7 +23,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, role, imageSrc, bio }) =>
       </div>
       <CardContent className="p-6 text-center">
         <h3 className="font-bold text-xl text-primary mb-1">{name}</h3>
-        <p className="text-secondary mb-3">{role}</p>
+        <p className="text-secondary-dark mb-3">{role}</p>
         {bio && <p className="text-muted-foreground text-sm line-clamp-3">{bio}</p>}
       </CardContent>
     </Card>

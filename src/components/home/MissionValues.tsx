@@ -30,13 +30,13 @@ const MissionValues = () => {
           {/* Values */}
           <Card className="bg-white border-t-4 border-t-secondary shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-secondary">Values</CardTitle>
+              <CardTitle className="text-2xl font-bold text-secondary-dark">Values</CardTitle>
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
                 {values.map((value, index) => (
                   <li key={index} className="flex items-center">
-                    <Check size={18} className="text-secondary mr-2" />
+                    <Check size={18} className="text-secondary-dark mr-2" />
                     <span>{value}</span>
                   </li>
                 ))}
@@ -47,7 +47,7 @@ const MissionValues = () => {
           {/* Vision */}
           <Card className="bg-white border-t-4 border-t-accent shadow-md hover:shadow-lg transition-shadow">
             <CardHeader>
-              <CardTitle className="text-2xl font-bold text-accent">Vision</CardTitle>
+              <CardTitle className="text-2xl font-bold text-accent-dark">Vision</CardTitle>
             </CardHeader>
             <CardContent>
               <p className="text-dark">

@@ -16,19 +16,19 @@ const Footer = () => {
             </h2>
             <p className="mb-6">Promoting safety and professionalism among digital boda drivers and delivery personnel</p>
             <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-accent">
+              <a href="#" className="text-white hover:text-secondary">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="text-white hover:text-accent">
+              <a href="#" className="text-white hover:text-secondary">
                 <Twitter size={20} />
               </a>
-              <a href="#" className="text-white hover:text-accent">
+              <a href="#" className="text-white hover:text-secondary">
                 <Youtube size={20} />
               </a>
-              <a href="#" className="text-white hover:text-accent">
+              <a href="#" className="text-white hover:text-secondary">
                 <Instagram size={20} />
               </a>
-              <a href="#" className="text-white hover:text-accent">
+              <a href="#" className="text-white hover:text-secondary">
                 <Linkedin size={20} />
               </a>
             </div>
@@ -38,14 +38,14 @@ const Footer = () => {
           <div className="w-full md:w-1/3 lg:w-1/4 mb-8">
             <h3 className="text-lg font-bold mb-4">Company</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="hover:text-accent transition-colors">About Us</Link></li>
-              <li><Link to="/contact" className="hover:text-accent transition-colors">Contact Us</Link></li>
-              <li><Link to="/register" className="hover:text-accent transition-colors">Register</Link></li>
-              <li><Link to="/login" className="hover:text-accent transition-colors">Login</Link></li>
-              <li><Link to="/verify" className="hover:text-accent transition-colors">Verify a bike</Link></li>
-              <li><Link to="/help" className="hover:text-accent transition-colors">Help</Link></li>
-              <li><Link to="/privacy" className="hover:text-accent transition-colors">Privacy Policy</Link></li>
-              <li><Link to="/terms" className="hover:text-accent transition-colors">Terms & Conditions</Link></li>
+              <li><Link to="/about" className="hover:text-secondary transition-colors">About Us</Link></li>
+              <li><Link to="/contact" className="hover:text-secondary transition-colors">Contact Us</Link></li>
+              <li><Link to="/register" className="hover:text-secondary transition-colors">Register</Link></li>
+              <li><Link to="/login" className="hover:text-secondary transition-colors">Login</Link></li>
+              <li><Link to="/verify" className="hover:text-secondary transition-colors">Verify a bike</Link></li>
+              <li><Link to="/help" className="hover:text-secondary transition-colors">Help</Link></li>
+              <li><Link to="/privacy" className="hover:text-secondary transition-colors">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-secondary transition-colors">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -70,7 +70,7 @@ const Footer = () => {
                 placeholder="Your email" 
                 className="rounded-r-none bg-white/10 border-r-0"
               />
-              <Button size="icon" className="rounded-l-none bg-accent hover:bg-accent-dark">
+              <Button size="icon" className="rounded-l-none bg-secondary hover:bg-secondary-dark text-secondary-foreground">
                 <Send size={18} />
               </Button>
             </div>
@@ -82,7 +82,7 @@ const Footer = () => {
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <p className="text-sm">© 2024 Digital Boda and Deliveries Kenya. All rights reserved.</p>
             <Link to="/donate" className="mt-4 sm:mt-0">
-              <Button variant="outline" className="border-accent text-accent hover:bg-accent hover:text-white">
+              <Button variant="outline" className="border-secondary text-secondary hover:bg-secondary hover:text-secondary-foreground">
                 Donate
               </Button>
             </Link>

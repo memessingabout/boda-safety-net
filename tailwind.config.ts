@@ -26,22 +26,22 @@ export default {
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
 				primary: {
-					DEFAULT: '#006400', // dark green (matches site)
+					DEFAULT: '#0047AB', // cobalt blue
 					foreground: '#FFFFFF',
-					light: '#4CAF50',
-					dark: '#004D00'
+					light: '#3B82F6',
+					dark: '#002D6B'
 				},
 				secondary: {
-					DEFAULT: '#BC3F31', // red color from the site
-					foreground: '#FFFFFF',
-					light: '#D84A38',
-					dark: '#9E2A1F'
+					DEFAULT: '#FFD700', // gold
+					foreground: '#000000',
+					light: '#FFDE44',
+					dark: '#D4AF37'
 				},
 				accent: {
-					DEFAULT: '#FFA500', // orange
-					foreground: '#FFFFFF',
-					light: '#FFB74D',
-					dark: '#E67E00'
+					DEFAULT: '#FFB000', // amber gold
+					foreground: '#000000',
+					light: '#FFCB44',
+					dark: '#CC8E00'
 				},
 				destructive: {
 					DEFAULT: 'hsl(var(--destructive))',
