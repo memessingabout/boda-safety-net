@@ -12,11 +12,18 @@ const CallToAction = () => {
         <p className="text-lg mb-8 max-w-2xl mx-auto">
           Hundreds of People Join Our Association Every Single Day!
         </p>
-        <Link to="/register">
-          <Button size="lg" className="bg-primary text-white hover:bg-primary-dark">
-            Register
-          </Button>
-        </Link>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link to="/register">
+            <Button size="lg" className="bg-primary text-white hover:bg-primary-dark">
+              Register
+            </Button>
+          </Link>
+          <Link to="/login">
+            <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+              Member Login
+            </Button>
+          </Link>
+        </div>
       </div>
     </section>
   );

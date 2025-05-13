@@ -1,6 +1,6 @@
 
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -27,6 +27,7 @@ const loginSchema = z.object({
 type LoginFormValues = z.infer<typeof loginSchema>;
 
 const Login = () => {
+  const navigate = useNavigate();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const [showOtp, setShowOtp] = useState(false);
@@ -58,10 +59,21 @@ const Login = () => {
         setShowOtp(true);
         toast.info("For added security, please verify your identity with the code sent to your phone.");
       } else {
-        // Successful login
+        // Successful login - Save user data
+        const userData = {
+          phoneNumber: data.phoneNumber,
+          isLoggedIn: true,
+          name: "John Doe", // Mock data
+          membershipId: "DBDA" + Math.floor(10000 + Math.random() * 90000),
+          joinDate: new Date().toISOString(),
+        };
+        
+        localStorage.setItem("user", JSON.stringify(userData));
         toast.success("Login successful!");
+        
+        // Redirect to dashboard
         setTimeout(() => {
-          window.location.href = "/";
+          navigate("/dashboard");
         }, 1000);
       }
     } catch (error) {
@@ -81,9 +93,21 @@ const Login = () => {
       // Mock verification delay
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      // Save user data after OTP verification
+      const userData = {
+        phoneNumber: phoneNumber,
+        isLoggedIn: true,
+        name: "John Doe", // Mock data
+        membershipId: "DBDA" + Math.floor(10000 + Math.random() * 90000),
+        joinDate: new Date().toISOString(),
+      };
+      
+      localStorage.setItem("user", JSON.stringify(userData));
       toast.success("Login successful!");
+      
+      // Redirect to dashboard
       setTimeout(() => {
-        window.location.href = "/";
+        navigate("/dashboard");
       }, 1000);
     } catch (error) {
       toast.error("Invalid verification code. Please try again.");
